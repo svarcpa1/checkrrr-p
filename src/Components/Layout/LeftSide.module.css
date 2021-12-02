@@ -1,0 +1,5 @@
+.left_side {
+  border: 1px solid black;
+  flex: 1.2;
+  min-width: 400px;
+}

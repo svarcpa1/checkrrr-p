@@ -1,0 +1,10 @@
+.button_comp {
+  border: gray solid 1px;
+  border-radius: 3px;
+  background-color: #efefef;
+}
+
+.button_comp:hover {
+  background-color: #bebebe;
+  cursor: pointer;
+}
