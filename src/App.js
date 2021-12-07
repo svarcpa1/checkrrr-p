@@ -12,7 +12,7 @@ function App() {
       description: "",
     },
     {
-      id: "id_cat_1638476783006",
+      id: "id_cat_1638476783007",
       label: "Weekend in hometown",
       description: "Things to ge to...",
     },
@@ -21,24 +21,48 @@ function App() {
   const INITIAL_ITEMS = [
     {
       categoryId: "id_cat_1638476783006",
-      items: [
+      categoryItems: [
         {
           id: "id_it_1638476783006",
           label: "Lano",
           description: "At least 40m",
-          done: false,
+          isDone: false,
         },
         {
           id: "id_it_1638476783007",
           label: "Climbing shoes",
           description: "",
-          done: false,
+          isDone: false,
+        },
+      ],
+    },
+    {
+      categoryId: "id_cat_1638476783007",
+      categoryItems: [
+        {
+          id: "id_it_1638476783008",
+          label: "Underwear",
+          description: "",
+          isDone: false,
+        },
+        {
+          id: "id_it_1638476783009",
+          label: "Toothbrush",
+          description: "",
+          isDone: false,
+        },
+        {
+          id: "id_it_1638476783010",
+          label: "Patience",
+          description: "",
+          isDone: false,
         },
       ],
     },
   ];
 
   const [categories, setCategories] = useState(INITIAL_CATEGORIES);
+  const [items, setItems] = useState(INITIAL_ITEMS);
 
   const addCategory = (categoryLabel, categoryDescription) => {
     setCategories((previousState) => {
@@ -53,12 +77,21 @@ function App() {
     });
   };
 
+  const filterItems = (categoryID) => {
+    let filteredItemsLoc = INITIAL_ITEMS.filter(
+      (i) => i.categoryId === categoryID
+    );
+    setItems(filteredItemsLoc);
+  };
+
   return (
     <React.Fragment>
       <Header></Header>
       <Content
-        listOfCategories={categories}
         addCategory={addCategory}
+        listOfCategories={categories}
+        filterItems={filterItems}
+        listOfFilteredItems={items}
       ></Content>
     </React.Fragment>
   );

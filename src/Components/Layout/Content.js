@@ -4,14 +4,14 @@ import RightSide from "./RightSide";
 import styles from "./Content.module.css";
 
 const Content = (props) => {
-  //comment
   return (
     <div className={styles.content}>
       <LeftSide
         listOfCategories={props.listOfCategories}
         addCategory={props.addCategory}
+        filterItems={props.filterItems}
       ></LeftSide>
-      <RightSide></RightSide>
+      <RightSide listOfFilteredItems={props.listOfFilteredItems}></RightSide>
     </div>
   );
 };

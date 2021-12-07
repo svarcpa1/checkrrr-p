@@ -1,5 +1,7 @@
 .right_side {
-  border: 1px solid black;
-  flex: 1;
+  border-left: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+  flex: 1.2;
   min-width: 400px;
+  background-color: rgb(238, 252, 252);
 }

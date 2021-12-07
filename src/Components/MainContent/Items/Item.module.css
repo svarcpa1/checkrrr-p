@@ -1,0 +1,16 @@
+li.item_card_li {
+  list-style-type: none;
+  width: 100%;
+}
+
+li.item_card_li :hover {
+  background-color: rgb(221, 254, 255);
+  cursor: pointer;
+}
+
+li .item_card {
+  padding: 1rem;
+  margin: 0.5rem 2.5rem;
+  border-radius: 15px;
+  background-color: white;
+}

@@ -9,7 +9,10 @@ const LeftSide = (props) => {
   return (
     <div className={styles.left_side}>
       <AddCategory addCategory={props.addCategory}></AddCategory>
-      <CategoryList listOfCategories={props.listOfCategories}></CategoryList>
+      <CategoryList
+        listOfCategories={props.listOfCategories}
+        filterItems={props.filterItems}
+      ></CategoryList>
     </div>
   );
 };

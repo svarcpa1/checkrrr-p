@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import ReactDOM from "react-dom";
 
 import styles from "./AddCategory.module.css";
@@ -8,8 +9,6 @@ import Label from "../UI/Label";
 import Button from "../UI/Button";
 import Input from "../UI/Input";
 import Modal from "../UI/Modal";
-
-import { useState } from "react";
 
 const AddCategory = (props) => {
   const [userInput, setUserinput] = useState({

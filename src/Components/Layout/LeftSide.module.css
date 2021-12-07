@@ -1,5 +1,5 @@
 .left_side {
-  border: 1px solid black;
-  flex: 1.2;
+  border-bottom: 1px solid #efefef;
+  flex: 1;
   min-width: 400px;
 }
