@@ -8,7 +8,7 @@ import Card from "../UI/Card";
 import Label from "../UI/Label";
 import Button from "../UI/Button";
 import Input from "../UI/Input";
-import Modal from "../UI/Modal";
+import ErrorModal from "../UI/ErrorModal";
 
 const AddCategory = (props) => {
   const [userInput, setUserinput] = useState({
@@ -72,11 +72,11 @@ const AddCategory = (props) => {
   return (
     <React.Fragment>
       {isError.error && (
-        <Modal
+        <ErrorModal
           text={isError.errorMessage}
           title="Error"
           closeModalHandler={closeModal}
-        ></Modal>
+        ></ErrorModal>
       )}
 
       <Card

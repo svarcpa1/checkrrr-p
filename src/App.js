@@ -24,7 +24,7 @@ function App() {
       categoryItems: [
         {
           id: "id_it_1638476783006",
-          label: "Lano",
+          label: "Rope",
           description: "At least 40m",
           isDone: false,
         },

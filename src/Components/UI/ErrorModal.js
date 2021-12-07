@@ -2,7 +2,8 @@ import React from "react";
 //for portal
 import ReactDOM from "react-dom";
 
-import styles from "./Modal.module.css";
+import styles from "./ErrorModal.module.css";
+
 import Card from "./Card";
 import Button from "./Button";
 import Backdrop from "./Backdrop";
