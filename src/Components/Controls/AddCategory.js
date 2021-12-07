@@ -16,10 +16,12 @@ const AddCategory = (props) => {
     description: "",
   });
 
-  const [isError, sestIsError] = useState({
+  const [isError, setIsError] = useState({
     error: false,
     errorMessage: "",
   });
+
+  const [isAddingCategoryMode, setIsAddingCategoryMode] = useState(false);
 
   const addCategoryHandler = (event) => {
     // prevents default behavior = request not send, page not reloaded
@@ -27,7 +29,7 @@ const AddCategory = (props) => {
 
     //validation (trim() to prevent white spaces)
     if (userInput.label.trim() === "") {
-      sestIsError({
+      setIsError({
         error: true,
         errorMessage: "The Label is mandatory",
       });
@@ -63,10 +65,14 @@ const AddCategory = (props) => {
   };
 
   const closeModal = (event) => {
-    sestIsError({
+    setIsError({
       error: false,
       errorMessage: "",
     });
+  };
+
+  const newCategoryHandler = () => {
+    setIsAddingCategoryMode(!isAddingCategoryMode);
   };
 
   return (
@@ -79,36 +85,44 @@ const AddCategory = (props) => {
         ></ErrorModal>
       )}
 
-      <Card
-        className={styles.add_category}
-        children={
-          <form onSubmit={addCategoryHandler}>
-            <Label text="Label of the category:" for="label"></Label>
-            <Input
-              type="text"
-              placeholder="Bike trip"
-              // two-way binding
-              value={userInput.label}
-              changeHandler={labelChangeHandler}
-              id="label"
-            ></Input>
-            <Label text="Description category:" for="description"></Label>
-            <Input
-              type="text"
-              placeholder="The list of thing to get to MTB bike trip"
-              // two-way binding
-              value={userInput.description}
-              changeHandler={descriptionChangeHandler}
-              id="description"
-            ></Input>
-            <Button
-              text="Submit"
-              type="submit"
-              className={styles.button_add_category}
-            ></Button>
-          </form>
-        }
-      ></Card>
+      <Button
+        text="New Category"
+        className={styles.new_category_button}
+        submitHandler={newCategoryHandler}
+      ></Button>
+
+      {isAddingCategoryMode && (
+        <Card
+          className={styles.add_category}
+          children={
+            <form onSubmit={addCategoryHandler}>
+              <Label text="Label of the category:" for="label"></Label>
+              <Input
+                type="text"
+                placeholder="Bike trip"
+                // two-way binding
+                value={userInput.label}
+                changeHandler={labelChangeHandler}
+                id="label"
+              ></Input>
+              <Label text="Description category:" for="description"></Label>
+              <Input
+                type="text"
+                placeholder="The list of thing to get to MTB bike trip"
+                // two-way binding
+                value={userInput.description}
+                changeHandler={descriptionChangeHandler}
+                id="description"
+              ></Input>
+              <Button
+                text="Submit"
+                type="submit"
+                className={styles.button_add_category}
+              ></Button>
+            </form>
+          }
+        ></Card>
+      )}
     </React.Fragment>
   );
 };
