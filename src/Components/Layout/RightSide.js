@@ -5,7 +5,11 @@ import ItemList from "../MainContent/Items/ItemList";
 const RightSide = (props) => {
   return (
     <div className={styles.right_side}>
-      <ItemList listOfFilteredItems={props.listOfFilteredItems}></ItemList>
+      <ItemList
+        listOfFilteredItems={props.listOfFilteredItems}
+        actualCategory={props.actualCategory}
+        addItem={props.addItem}
+      ></ItemList>
     </div>
   );
 };

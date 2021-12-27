@@ -33,7 +33,7 @@ const Modal = (props) => {
     <React.Fragment>
       {ReactDOM.createPortal(
         <Backdrop backdropClick={props.closeModalHandler} />,
-        document.getElementById("backdrop-root")
+        document.getElementById("error-backdrop-root")
       )}
       {ReactDOM.createPortal(
         <ModalOverlay
@@ -41,7 +41,7 @@ const Modal = (props) => {
           text={props.text}
           closeModalHandler={props.closeModalHandler}
         />,
-        document.getElementById("modal-root")
+        document.getElementById("error-modal-root")
       )}
     </React.Fragment>
   );

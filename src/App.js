@@ -50,14 +50,14 @@ function App() {
     {
       id: "id_it_1638476783010",
       categoryID: "id_cat_1638476783007",
-      label: "Patience",
+      label: "Patience (a lot)",
       description: "",
       isDone: false,
     },
   ];
 
   const [categories, setCategories] = useState(INITIAL_CATEGORIES);
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(INITIAL_ITEMS);
 
   const addCategory = (categoryLabel, categoryDescription) => {
     setCategories((previousState) => {
@@ -72,11 +72,17 @@ function App() {
     });
   };
 
-  const filterItems = (categoryID) => {
-    let filteredItemsLoc = INITIAL_ITEMS.filter(
-      (i) => i.categoryID === categoryID
-    );
-    setItems(filteredItemsLoc);
+  const addItem = (itemLabel, categoryID) => {
+    setItems((previousState) => {
+      return [
+        ...previousState,
+        {
+          id: "id_it_" + new Date().getTime(),
+          categoryID: categoryID,
+          label: itemLabel,
+        },
+      ];
+    });
   };
 
   return (
@@ -84,9 +90,9 @@ function App() {
       <Header></Header>
       <Content
         addCategory={addCategory}
+        addItem={addItem}
         listOfCategories={categories}
-        filterItems={filterItems}
-        listOfFilteredItems={items}
+        allItems={items}
       ></Content>
     </React.Fragment>
   );

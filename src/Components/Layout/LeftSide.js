@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./LeftSide.module.css";
 
-import AddCategory from "../Controls/AddCategory";
+import AddCategory from "../MainContent/Categories/AddCategory";
 import CategoryList from "../MainContent/Categories/CategoryList";
 
 const LeftSide = (props) => {

@@ -1,0 +1,30 @@
+.modal {
+  position: fixed;
+  top: 30vh;
+  left: 25%;
+  width: 50%;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.modal h2 {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem;
+  margin: 0;
+  background: rgb(213, 226, 250);
+}
+
+.modal .content {
+  padding: 1rem;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal .actions {
+  border-top: 1px solid #ccc;
+  background: #eee;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: row-reverse;
+}
