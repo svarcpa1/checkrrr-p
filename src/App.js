@@ -20,49 +20,44 @@ function App() {
 
   const INITIAL_ITEMS = [
     {
-      categoryId: "id_cat_1638476783006",
-      categoryItems: [
-        {
-          id: "id_it_1638476783006",
-          label: "Rope",
-          description: "At least 40m",
-          isDone: false,
-        },
-        {
-          id: "id_it_1638476783007",
-          label: "Climbing shoes",
-          description: "",
-          isDone: false,
-        },
-      ],
+      id: "id_it_1638476783006",
+      categoryID: "id_cat_1638476783006",
+      label: "Rope",
+      description: "At least 40m",
+      isDone: false,
     },
     {
-      categoryId: "id_cat_1638476783007",
-      categoryItems: [
-        {
-          id: "id_it_1638476783008",
-          label: "Underwear",
-          description: "",
-          isDone: false,
-        },
-        {
-          id: "id_it_1638476783009",
-          label: "Toothbrush",
-          description: "",
-          isDone: false,
-        },
-        {
-          id: "id_it_1638476783010",
-          label: "Patience",
-          description: "",
-          isDone: false,
-        },
-      ],
+      id: "id_it_1638476783007",
+      categoryID: "id_cat_1638476783006",
+      label: "Climbing shoes",
+      description: "",
+      isDone: false,
+    },
+    {
+      id: "id_it_1638476783008",
+      categoryID: "id_cat_1638476783007",
+      label: "Underwear",
+      description: "",
+      isDone: false,
+    },
+    {
+      id: "id_it_1638476783009",
+      categoryID: "id_cat_1638476783007",
+      label: "Toothbrush",
+      description: "",
+      isDone: false,
+    },
+    {
+      id: "id_it_1638476783010",
+      categoryID: "id_cat_1638476783007",
+      label: "Patience",
+      description: "",
+      isDone: false,
     },
   ];
 
   const [categories, setCategories] = useState(INITIAL_CATEGORIES);
-  const [items, setItems] = useState(INITIAL_ITEMS);
+  const [items, setItems] = useState([]);
 
   const addCategory = (categoryLabel, categoryDescription) => {
     setCategories((previousState) => {
@@ -79,7 +74,7 @@ function App() {
 
   const filterItems = (categoryID) => {
     let filteredItemsLoc = INITIAL_ITEMS.filter(
-      (i) => i.categoryId === categoryID
+      (i) => i.categoryID === categoryID
     );
     setItems(filteredItemsLoc);
   };

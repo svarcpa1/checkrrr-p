@@ -3,6 +3,8 @@ import React from "react";
 import Item from "./Item";
 
 import styles from "./ItemList.module.css";
+import Button from "../../UI/Button";
+import ItemControls from "./ItemControls";
 
 const ItemList = (props) => {
   const PLACEHOLDER = "No item added";
@@ -13,16 +15,20 @@ const ItemList = (props) => {
 
   //return list of items
   return (
-    <ul>
-      {props.listOfFilteredItems[0].categoryItems.map((i) => (
-        <Item
-          key={i.id}
-          label={i.label}
-          description={i.description}
-          isDone={i.isDone}
-        ></Item>
-      ))}
-    </ul>
+    <React.Fragment>
+      <Button text="New Item" className={styles.new_item_button}></Button>
+      <ul>
+        {props.listOfFilteredItems.map((i) => (
+          <Item
+            key={i.id}
+            label={i.label}
+            description={i.description}
+            isDone={i.isDone}
+          ></Item>
+        ))}
+      </ul>
+      <ItemControls></ItemControls>
+    </React.Fragment>
   );
 };
 
