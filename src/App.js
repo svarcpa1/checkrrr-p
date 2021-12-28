@@ -24,7 +24,7 @@ function App() {
       categoryID: "id_cat_1638476783006",
       label: "Rope",
       description: "At least 40m",
-      isDone: false,
+      isDone: true,
     },
     {
       id: "id_it_1638476783007",
@@ -87,6 +87,29 @@ function App() {
     });
   };
 
+  //TODO
+  const removeItem = (itemID) => {
+    let updatedArray = [...items].filter((item) => item.id !== itemID);
+    setItems(updatedArray);
+  };
+
+  const setItemDoneOrUndone = (itemID) => {
+    let updatedArray = [...items];
+    const objectIndex = items.findIndex((object) => object.id === itemID);
+    updatedArray[objectIndex].isDone = !updatedArray[objectIndex].isDone;
+    setItems(updatedArray);
+  };
+
+  const setAllItemsDoneOrUndone = (done, categoryID) => {
+    let updatedArray = [...items];
+    for (let key in updatedArray) {
+      if (updatedArray[key].categoryID === categoryID) {
+        updatedArray[key].isDone = done;
+      }
+    }
+    setItems(updatedArray);
+  };
+
   return (
     <React.Fragment>
       <Header></Header>
@@ -95,6 +118,8 @@ function App() {
         addItem={addItem}
         listOfCategories={categories}
         allItems={items}
+        setItemDoneOrUndone={setItemDoneOrUndone}
+        setAllItemsDoneOrUndone={setAllItemsDoneOrUndone}
       ></Content>
     </React.Fragment>
   );
