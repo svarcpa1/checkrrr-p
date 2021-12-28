@@ -14,6 +14,10 @@ import Input from "../../UI/Input";
 //splitting component to use Portals
 const ModalOverlay = (props) => {
   const [newlyAddedItem, setNewlyAddedItem] = useState("");
+  const [isErrorObject, setIsErrorObject] = useState({
+    error: false,
+    errorMessage: "",
+  });
 
   const newItemInputHandler = (event) => {
     setNewlyAddedItem(event.target.value);
@@ -21,8 +25,16 @@ const ModalOverlay = (props) => {
 
   const addItemHandler = (event) => {
     event.preventDefault();
-    props.addItemModalHandler(newlyAddedItem);
-    setNewlyAddedItem("");
+
+    if (newlyAddedItem === "") {
+      setIsErrorObject({
+        error: true,
+        errorMessage: "Please fill in a Title!",
+      });
+    } else {
+      props.addItemModalHandler(newlyAddedItem);
+      setNewlyAddedItem("");
+    }
   };
 
   return (
@@ -37,6 +49,7 @@ const ModalOverlay = (props) => {
           changeHandler={newItemInputHandler}
           value={newlyAddedItem}
         ></Input>
+        {isErrorObject.error && <p>{isErrorObject.errorMessage.toString()}</p>}
       </div>
       <div className={styles.actions}>
         <Button
