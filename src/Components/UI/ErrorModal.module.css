@@ -7,6 +7,13 @@
   overflow: hidden;
 }
 
+@media only screen and (max-width: 600px) {
+  .modal {
+    left: 10%;
+    width: 80%;
+  }
+}
+
 .modal h2 {
   border-bottom: 1px solid #ccc;
   padding: 1rem;
@@ -23,4 +30,6 @@
   border-top: 1px solid #ccc;
   background: #eee;
   padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: row-reverse;
 }

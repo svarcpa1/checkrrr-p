@@ -80,6 +80,8 @@ function App() {
           id: "id_it_" + new Date().getTime(),
           categoryID: categoryID,
           label: itemLabel,
+          description: "",
+          isDone: false,
         },
       ];
     });
