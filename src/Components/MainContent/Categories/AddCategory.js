@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import ReactDOM from "react-dom";
 
 import styles from "./AddCategory.module.css";
 

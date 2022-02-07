@@ -65,13 +65,18 @@ const ItemList = (props) => {
         {props.listOfFilteredItems.map((i) => (
           <Item
             key={i.id}
+            id={i.id}
             label={i.label}
             description={i.description}
             isDone={i.isDone}
+            setItemDoneOrUndone={props.setItemDoneOrUndone}
           ></Item>
         ))}
       </ul>
-      <ItemControls></ItemControls>
+      <ItemControls
+        setAllItemsDoneOrUndone={props.setAllItemsDoneOrUndone}
+        actualCategory={props.actualCategory}
+      ></ItemControls>
     </React.Fragment>
   );
 };

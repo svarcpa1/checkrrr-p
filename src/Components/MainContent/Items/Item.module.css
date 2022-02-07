@@ -3,14 +3,32 @@ li.item_card_li {
   width: 100%;
 }
 
-li.item_card_li :hover {
-  background-color: rgb(221, 254, 255);
-  cursor: pointer;
-}
-
 li .item_card {
   padding: 1rem;
   margin: 0.5rem 0rem;
   border-radius: 15px;
   background-color: white;
+}
+
+li .item_card:hover {
+  background-color: rgb(245, 245, 231);
+  cursor: pointer;
+}
+
+li .item_card_done {
+  padding: 1rem;
+  margin: 0.5rem 0rem;
+  border-radius: 15px;
+  background-color: rgb(241, 241, 188);
+}
+
+li .item_card_done:hover {
+  background-color: rgb(245, 245, 231);
+  cursor: pointer;
+}
+
+.item_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

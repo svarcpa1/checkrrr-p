@@ -16,7 +16,11 @@ const Category = (props) => {
   return (
     <li onClick={filterCategoryHandler} className={styles.category_card_li}>
       <Card
-        className={styles.category_card}
+        className={
+          props.isCategoryExpanded
+            ? styles.category_card_selected
+            : styles.category_card
+        }
         children={
           <div className={styles.category_card_content}>
             <Label

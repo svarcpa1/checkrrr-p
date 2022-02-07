@@ -28,6 +28,8 @@ const Content = (props) => {
         listOfFilteredItems={filteredItems}
         actualCategory={activeCategory}
         addItem={props.addItem}
+        setItemDoneOrUndone={props.setItemDoneOrUndone}
+        setAllItemsDoneOrUndone={props.setAllItemsDoneOrUndone}
       ></RightSide>
     </div>
   );

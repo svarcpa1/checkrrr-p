@@ -9,6 +9,8 @@ const RightSide = (props) => {
         listOfFilteredItems={props.listOfFilteredItems}
         actualCategory={props.actualCategory}
         addItem={props.addItem}
+        setItemDoneOrUndone={props.setItemDoneOrUndone}
+        setAllItemsDoneOrUndone={props.setAllItemsDoneOrUndone}
       ></ItemList>
     </div>
   );
