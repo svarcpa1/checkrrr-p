@@ -10,6 +10,11 @@ const Item = (props) => {
     props.setItemDoneOrUndone(props.id);
   };
 
+  const removeItemHandler = (event) => {
+    event.stopPropagation();
+    props.removeItem(props.id);
+  };
+
   //return list of items
   return (
     <li className={styles.item_card_li}>
@@ -19,7 +24,10 @@ const Item = (props) => {
         children={
           <div className={styles.item_content}>
             <div>{props.label}</div>
-            <Button text="Remove Item"></Button>
+            <Button
+              text="Remove Item"
+              submitHandler={removeItemHandler}
+            ></Button>
           </div>
         }
       ></Card>

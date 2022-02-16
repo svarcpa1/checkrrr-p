@@ -30,7 +30,10 @@ const Category = (props) => {
             {props.isCategoryExpanded && (
               <React.Fragment>
                 {props.description !== "" && <p>{props.description}</p>}
-                <CategoryControls></CategoryControls>
+                <CategoryControls
+                  removeCategory={props.removeCategory}
+                  categoryID = {props.id}
+                ></CategoryControls>
               </React.Fragment>
             )}
           </div>

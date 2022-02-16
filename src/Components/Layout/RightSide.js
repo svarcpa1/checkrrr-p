@@ -11,6 +11,7 @@ const RightSide = (props) => {
         addItem={props.addItem}
         setItemDoneOrUndone={props.setItemDoneOrUndone}
         setAllItemsDoneOrUndone={props.setAllItemsDoneOrUndone}
+        removeItem={props.removeItem}
       ></ItemList>
     </div>
   );

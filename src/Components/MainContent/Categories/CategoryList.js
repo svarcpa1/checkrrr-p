@@ -29,6 +29,7 @@ const CategoryList = (props) => {
           filterItems={props.filterItems}
           expandCategory={expandCategory}
           isCategoryExpanded={expandedCategory === c.id}
+          removeCategory={props.removeCategory}
         ></Category>
       ))}
     </ul>

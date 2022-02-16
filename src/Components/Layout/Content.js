@@ -23,6 +23,7 @@ const Content = (props) => {
         listOfCategories={props.listOfCategories}
         addCategory={props.addCategory}
         filterItems={filterItems}
+        removeCategory={props.removeCategory}
       ></LeftSide>
       <RightSide
         listOfFilteredItems={filteredItems}
@@ -30,6 +31,7 @@ const Content = (props) => {
         addItem={props.addItem}
         setItemDoneOrUndone={props.setItemDoneOrUndone}
         setAllItemsDoneOrUndone={props.setAllItemsDoneOrUndone}
+        removeItem={props.removeItem}
       ></RightSide>
     </div>
   );

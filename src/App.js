@@ -72,6 +72,14 @@ function App() {
     });
   };
 
+  //TODO removing all related items
+  const removeCategory = (categoryID) => {
+    let updatedItemArray = [...items].filter(item => item.categoryID !== categoryID);
+    let updatedCategoryArray = [...categories].filter(category => category.id !== categoryID);
+    setItems(updatedItemArray);
+    setCategories(updatedCategoryArray);
+  };
+
   const addItem = (itemLabel, categoryID) => {
     setItems((previousState) => {
       return [
@@ -87,10 +95,9 @@ function App() {
     });
   };
 
-  //TODO
   const removeItem = (itemID) => {
-    let updatedArray = [...items].filter((item) => item.id !== itemID);
-    setItems(updatedArray);
+    let updatedItemArray = [...items].filter(item => item.id !== itemID);
+    setItems(updatedItemArray);
   };
 
   const setItemDoneOrUndone = (itemID) => {
@@ -120,6 +127,8 @@ function App() {
         allItems={items}
         setItemDoneOrUndone={setItemDoneOrUndone}
         setAllItemsDoneOrUndone={setAllItemsDoneOrUndone}
+        removeItem={removeItem}
+        removeCategory={removeCategory}
       ></Content>
     </React.Fragment>
   );

@@ -12,6 +12,7 @@ const LeftSide = (props) => {
       <CategoryList
         listOfCategories={props.listOfCategories}
         filterItems={props.filterItems}
+        removeCategory={props.removeCategory}
       ></CategoryList>
     </div>
   );

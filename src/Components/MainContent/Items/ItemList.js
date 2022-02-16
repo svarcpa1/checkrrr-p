@@ -32,19 +32,6 @@ const ItemList = (props) => {
     return <h2>{PLACEHOLDER_NO_CATEGORY_SELECTED}</h2>;
   }
 
-  if (props.listOfFilteredItems.length < 1) {
-    return (
-      <React.Fragment>
-        <Button
-          text="New Item"
-          className={styles.new_item_button}
-          submitHandler={addItemHandler}
-        ></Button>
-        <h2>{PLACEHOLDER_NO_ITEM}</h2>
-      </React.Fragment>
-    );
-  }
-
   //return list of items
   return (
     <React.Fragment>
@@ -61,18 +48,25 @@ const ItemList = (props) => {
         className={styles.new_item_button}
         submitHandler={addItemHandler}
       ></Button>
-      <ul>
-        {props.listOfFilteredItems.map((i) => (
-          <Item
-            key={i.id}
-            id={i.id}
-            label={i.label}
-            description={i.description}
-            isDone={i.isDone}
-            setItemDoneOrUndone={props.setItemDoneOrUndone}
-          ></Item>
-        ))}
-      </ul>
+
+      {props.listOfFilteredItems.length < 1 ? 
+        <h2>{PLACEHOLDER_NO_ITEM}</h2> 
+        :
+        <ul>
+          {props.listOfFilteredItems.map((i) => (
+            <Item
+              key={i.id}
+              id={i.id}
+              label={i.label}
+              description={i.description}
+              isDone={i.isDone}
+              setItemDoneOrUndone={props.setItemDoneOrUndone}
+              removeItem={props.removeItem}
+            ></Item>
+          ))}
+        </ul>
+      }
+      
       <ItemControls
         setAllItemsDoneOrUndone={props.setAllItemsDoneOrUndone}
         actualCategory={props.actualCategory}
